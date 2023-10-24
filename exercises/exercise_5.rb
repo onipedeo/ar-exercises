@@ -11,3 +11,10 @@ puts "----------"
 total_revenue = Store.sum(:annual_revenue)
 puts total_revenue
 
+#Avg annual rev
+average_revenue = Store.average(:annual_revenue)
+puts average_revenue
+
+#No of stores with $1M or more
+over_1M_rev = Store.where('annual_revenue >= ?', 1000000).count
+puts "over 1M count: #{over_1M_rev}"
